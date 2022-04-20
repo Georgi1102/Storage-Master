@@ -1,4 +1,4 @@
-﻿using Storage_Master_first_stage.Entities.Products;
+using Storage_Master_first_stage.Entities.Products;
 using Storage_Master_first_stage.Entities.Storages;
 using Storage_Master_first_stage.Entities.Vehicles;
 using System;
@@ -15,21 +15,23 @@ namespace Storage_Master_first_stage
         private Dictionary<string, Storage> storages;
         private Vehicle currentVehicle;
 
+        public Dictionary<string, Stack<Product>> Products { get => products; set => products = value; }
+
         public StorageMaster()
         {
-            this.products = new Dictionary<string, Stack<Product>>();
+            this.Products = new Dictionary<string, Stack<Product>>();
             this.storages = new Dictionary<string, Storage>();
         }
 
         public string AddProduct(string type, double price)
         {
             Product product = CreateProduct(type, price);
-            if (products.ContainsKey(type) == false)
+            if (Products.ContainsKey(type) == false)
             {
-                products.Add(type, new Stack<Product>());
+                Products.Add(type, new Stack<Product>());
             }
 
-            products[type].Push(product);
+            Products[type].Push(product);
 
             string result = $"Added {type} to pool";
             return result;
@@ -61,9 +63,9 @@ namespace Storage_Master_first_stage
             int productCount = productNames.Count();
             foreach (string productName in productNames)
             {
-                if (this.products.ContainsKey(productName) && products[productName].Count > 0)
+                if (this.Products.ContainsKey(productName) && Products[productName].Count > 0)
                 {
-                    Product product = this.products[productName].Pop();
+                    Product product = this.Products[productName].Pop();
                     this.currentVehicle.LoadProduct(product);
                     loadedProductsCount++;
                 }
