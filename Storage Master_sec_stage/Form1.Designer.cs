@@ -1,4 +1,4 @@
-﻿
+
 namespace Storage_Master_sec_stage
 {
     partial class Form1
@@ -38,14 +38,16 @@ namespace Storage_Master_sec_stage
             this.CommandHistory = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.AddedProducts = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // welcomeSign
             // 
             this.welcomeSign.AutoSize = true;
-            this.welcomeSign.Location = new System.Drawing.Point(282, 9);
+            this.welcomeSign.Location = new System.Drawing.Point(322, 12);
             this.welcomeSign.Name = "welcomeSign";
-            this.welcomeSign.Size = new System.Drawing.Size(153, 15);
+            this.welcomeSign.Size = new System.Drawing.Size(194, 20);
             this.welcomeSign.TabIndex = 0;
             this.welcomeSign.Text = "Welcome to Storage Master";
             // 
@@ -53,17 +55,18 @@ namespace Storage_Master_sec_stage
             // 
             this.panelLable.AutoSize = true;
             this.panelLable.BackColor = System.Drawing.SystemColors.Info;
-            this.panelLable.Location = new System.Drawing.Point(610, 9);
+            this.panelLable.Location = new System.Drawing.Point(697, 12);
             this.panelLable.Name = "panelLable";
-            this.panelLable.Size = new System.Drawing.Size(79, 15);
+            this.panelLable.Size = new System.Drawing.Size(97, 20);
             this.panelLable.TabIndex = 2;
             this.panelLable.Text = "Control Panel\r\n";
             // 
             // addProductBtn
             // 
-            this.addProductBtn.Location = new System.Drawing.Point(12, 53);
+            this.addProductBtn.Location = new System.Drawing.Point(14, 71);
+            this.addProductBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addProductBtn.Name = "addProductBtn";
-            this.addProductBtn.Size = new System.Drawing.Size(94, 43);
+            this.addProductBtn.Size = new System.Drawing.Size(107, 57);
             this.addProductBtn.TabIndex = 3;
             this.addProductBtn.Text = "AddProduct";
             this.addProductBtn.UseVisualStyleBackColor = true;
@@ -71,9 +74,10 @@ namespace Storage_Master_sec_stage
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(-537, 53);
+            this.button2.Location = new System.Drawing.Point(-614, 71);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 43);
+            this.button2.Size = new System.Drawing.Size(107, 57);
             this.button2.TabIndex = 3;
             this.button2.Text = "AddProduct";
             this.button2.UseVisualStyleBackColor = true;
@@ -82,36 +86,38 @@ namespace Storage_Master_sec_stage
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(24, 35);
+            this.label1.Location = new System.Drawing.Point(27, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 15);
+            this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Commands";
             // 
             // ControlPanel
             // 
-            this.ControlPanel.Location = new System.Drawing.Point(478, 65);
+            this.ControlPanel.Location = new System.Drawing.Point(569, 87);
+            this.ControlPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ControlPanel.Multiline = true;
             this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(114, 319);
+            this.ControlPanel.Size = new System.Drawing.Size(130, 424);
             this.ControlPanel.TabIndex = 6;
             // 
             // CommandHistory
             // 
             this.CommandHistory.FormattingEnabled = true;
-            this.CommandHistory.ItemHeight = 15;
-            this.CommandHistory.Location = new System.Drawing.Point(617, 65);
+            this.CommandHistory.ItemHeight = 20;
+            this.CommandHistory.Location = new System.Drawing.Point(705, 87);
+            this.CommandHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CommandHistory.Name = "CommandHistory";
-            this.CommandHistory.Size = new System.Drawing.Size(154, 319);
+            this.CommandHistory.Size = new System.Drawing.Size(175, 424);
             this.CommandHistory.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(478, 46);
+            this.label2.Location = new System.Drawing.Point(568, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 15);
+            this.label2.Size = new System.Drawing.Size(131, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Current command:";
             // 
@@ -119,19 +125,40 @@ namespace Storage_Master_sec_stage
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(617, 46);
+            this.label3.Location = new System.Drawing.Point(705, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 15);
+            this.label3.Size = new System.Drawing.Size(122, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Command panel:";
             // 
+            // AddedProducts
+            // 
+            this.AddedProducts.FormattingEnabled = true;
+            this.AddedProducts.ItemHeight = 20;
+            this.AddedProducts.Location = new System.Drawing.Point(444, 87);
+            this.AddedProducts.Name = "AddedProducts";
+            this.AddedProducts.Size = new System.Drawing.Size(119, 244);
+            this.AddedProducts.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Info;
+            this.label4.Location = new System.Drawing.Point(443, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(119, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Added products:";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.AddedProducts);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CommandHistory);
             this.Controls.Add(this.ControlPanel);
@@ -140,6 +167,7 @@ namespace Storage_Master_sec_stage
             this.Controls.Add(this.addProductBtn);
             this.Controls.Add(this.panelLable);
             this.Controls.Add(this.welcomeSign);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Storage Master";
             this.ResumeLayout(false);
@@ -158,6 +186,8 @@ namespace Storage_Master_sec_stage
         public System.Windows.Forms.ListBox CommandHistory;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.ListBox AddedProducts;
+        private System.Windows.Forms.Label label4;
     }
 }
 
