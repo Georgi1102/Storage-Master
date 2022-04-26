@@ -16,11 +16,13 @@ namespace Storage_Master_first_stage
         private Vehicle currentVehicle;
 
         public Dictionary<string, Stack<Product>> Products { get => products; set => products = value; }
+        public Dictionary<string, Storage> Storages { get => storages; set => storages = value; }
+
 
         public StorageMaster()
         {
             this.Products = new Dictionary<string, Stack<Product>>();
-            this.storages = new Dictionary<string, Storage>();
+            this.Storages = new Dictionary<string, Storage>();
         }
 
         public string AddProduct(string type, double price)
@@ -42,7 +44,7 @@ namespace Storage_Master_first_stage
             Storage storage = CreateStorage(type, name);
             this.storages.Add(name, storage);
 
-            string result = $"Registered {name}";
+            string result = $"Registered storage: {name}";
             return result;
         }
 

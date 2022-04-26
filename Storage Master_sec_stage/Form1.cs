@@ -29,5 +29,11 @@ namespace Storage_Master_sec_stage
             win.Show();
         }
 
+        private void regStorage_Click(object sender, EventArgs e)
+        {
+            RegisterStorageWindow win = new RegisterStorageWindow();
+
+            win.Show();
+        }
     }
 }
