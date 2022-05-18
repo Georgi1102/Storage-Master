@@ -6,14 +6,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace Storage_Master_first_stage
 {
+
     public class StorageMaster
     {
         private Dictionary<string, Stack<Product>> products;
         private Dictionary<string, Storage> storages;
         private Vehicle currentVehicle;
+        private const string path = "D:\\dataStorage.txt";
+        private const string pathToSave = "D:\\FullStorageData.txt";
 
         public Dictionary<string, Stack<Product>> Products { get => products; set => products = value; }
         public Dictionary<string, Storage> Storages { get => storages; set => storages = value; }
@@ -28,6 +36,9 @@ namespace Storage_Master_first_stage
         public string AddProduct(string type, double price)
         {
             Product product = CreateProduct(type, price);
+
+            Serialize(product);        
+
             if (Products.ContainsKey(type) == false)
             {
                 Products.Add(type, new Stack<Product>());
@@ -42,6 +53,9 @@ namespace Storage_Master_first_stage
         public string RegisterStorage(string type, string name)
         {
             Storage storage = CreateStorage(type, name);
+
+            Serialize(storage);
+
             this.storages.Add(name, storage);
 
             string result = $"Registered storage: {name}";
@@ -239,6 +253,39 @@ namespace Storage_Master_first_stage
             }
 
             return storage;
+        }
+
+        private void Serialize<T>(T toSerObj)
+        {
+            IFormatter objFormatter = new BinaryFormatter();
+
+            Stream objStream = new FileStream(path,
+             FileMode.Create,
+             FileAccess.ReadWrite,
+             FileShare.None);
+
+#pragma warning disable SYSLIB0011 // Type or member is obsolete
+            objFormatter.Serialize(objStream, toSerObj);
+#pragma warning restore SYSLIB0011 // Type or member is obsolete
+
+            objStream.Close();
+
+            string[] lines = System.IO.File.ReadAllLines(path);
+
+            Save(lines);
+        }
+
+        private void Save(string[] lines)
+        {
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine("D:\\", "FullStorageData.txt"), true))
+            {
+                foreach (string line in lines)
+                {
+                    outputFile.WriteLine(line);
+                }
+                outputFile.WriteLine("-------");
+                outputFile.Close();
+            }
         }
     }
 }

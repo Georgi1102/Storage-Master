@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Storage_Master_first_stage.Entities.Vehicles
 {
+    [Serializable]
     public class Semi : Vehicle
     {
         private const int capacity = 10;

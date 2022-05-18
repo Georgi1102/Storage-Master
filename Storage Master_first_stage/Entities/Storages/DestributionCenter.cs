@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Storage_Master_first_stage.Entities.Storages
 {
-  
+    [Serializable]
     public class DestributionCenter : Storage
     {
         private const int capacity = 2;

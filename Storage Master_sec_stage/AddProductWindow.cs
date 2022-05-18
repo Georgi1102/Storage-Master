@@ -1,8 +1,13 @@
-using System;
+﻿using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using Storage_Master_first_stage;
+using Storage_Master_first_stage.Entities.Products;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Storage_Master_sec_stage
 {

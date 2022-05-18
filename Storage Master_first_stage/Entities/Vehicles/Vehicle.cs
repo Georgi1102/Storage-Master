@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Storage_Master_first_stage.Entities.Vehicles
 {
+    [Serializable]
     public abstract class Vehicle
     {
         private List<Product> trunk;

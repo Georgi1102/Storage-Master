@@ -24,9 +24,7 @@ namespace Storage_Master_sec_stage
         {
             try
             {
-                StorageMaster st = new StorageMaster();
-
-               
+                StorageMaster st = new StorageMaster();           
                
                 string type = typeText.Text;
                 string name = nameText.Text;

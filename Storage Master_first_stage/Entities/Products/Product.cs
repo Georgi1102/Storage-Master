@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Storage_Master_first_stage.Entities.Products
 {
+    [Serializable]
     public abstract class Product
     {
         private double price;
@@ -16,9 +17,10 @@ namespace Storage_Master_first_stage.Entities.Products
             this.Weight = weight;
         }
 
+        
         public double Price { get => this.price;
 
-            private set
+            internal set
             {
                 if (value < 0)
                 {
@@ -29,7 +31,7 @@ namespace Storage_Master_first_stage.Entities.Products
             }
         }
 
-        public double Weight { get; private set; }
+        public double Weight { get; internal set; }
         
     }
 }

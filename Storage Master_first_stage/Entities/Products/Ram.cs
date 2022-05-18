@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Storage_Master_first_stage.Entities.Products
 {
+    [Serializable]
     public class Ram : Product
     {
         private const double RamWeight = 0.1;

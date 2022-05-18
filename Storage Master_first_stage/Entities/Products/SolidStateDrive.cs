@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Storage_Master_first_stage.Entities.Products
 {
-   public class SolidStateDrive : Product
+    [Serializable]
+    public class SolidStateDrive : Product
     {
         private const double SolidStateDriveWeight = 0.2;
 

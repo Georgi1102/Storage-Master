@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Storage_Master_first_stage.Entities.Storages
 {
+    [Serializable]
     public abstract class Storage
     {
         private Vehicle[] garage;

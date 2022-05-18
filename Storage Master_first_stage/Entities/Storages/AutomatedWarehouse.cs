@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Storage_Master_first_stage.Entities.Storages
 {
+    [Serializable]
     public class AutomatedWarehouse : Storage
     {
         private const int capacity = 1;
